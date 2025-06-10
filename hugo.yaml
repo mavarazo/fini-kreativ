@@ -1,0 +1,29 @@
+# baseURL: https://www.fini-kreativ.ch
+languageCode: de-ch
+title: fini-kreativ
+
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+assets:
+  favicon16x16: /assets/favicon-16x16.png
+  favicon32x32: /assets/favicon-32x32.png
+  apple_touch_icon: /assets/apple-touch-icon.png
+
+favicon: favicon.ico
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  homeInfoParams:
+    Title: "Wilkommen auf fini-kreativ"
+    Content: |-
+      Die Seite befindet sich gerade im Aufbau.
+
+      Ich freue mich wenn du bald wieder vorbei schaust 👋
