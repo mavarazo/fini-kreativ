@@ -1,4 +1,4 @@
-# baseURL: https://www.fini-kreativ.ch
+baseURL: https://fini-kreativ.ch
 languageCode: de-ch
 title: fini-kreativ
 
@@ -13,6 +13,10 @@ assets:
   favicon16x16: /assets/favicon-16x16.png
   favicon32x32: /assets/favicon-32x32.png
   apple_touch_icon: /assets/apple-touch-icon.png
+
+caches:
+  images:
+    dir: :cacheDir/images
 
 favicon: favicon.ico
 
