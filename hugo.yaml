@@ -24,6 +24,10 @@ minify:
   disableXML: true
   minifyOutput: true
 
+services:
+  googleAnalytics:
+    id: G-4LLDP71Q6S
+
 params:
   homeInfoParams:
     Title: "Wilkommen auf fini-kreativ"
