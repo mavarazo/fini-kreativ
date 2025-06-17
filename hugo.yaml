@@ -29,9 +29,17 @@ services:
     id: G-4LLDP71Q6S
 
 params:
-  homeInfoParams:
-    Title: "Wilkommen auf fini-kreativ"
-    Content: |-
-      Die Seite befindet sich gerade im Aufbau.
+  env: production
+  title: fini-kreativ
+  description: Aus Stoffen von gestern – Taschen für morgen.
+  keywords: [Blog, Upcycling, Recycling, Handmade, Clutch, Bag]
 
-      Ich freue mich wenn du bald wieder vorbei schaust 👋
+  profileMode:
+    enabled: true
+    title: fini-kreativ
+    # subtitle: |
+    #   "Aus Stoffen von gestern – Taschen für morgen."
+    # imageUrl: /assets/2025-05-21.jpeg
+    # imageWidth: 512
+    # imageHeight: 512
+    # imageTitle: 3 bags
