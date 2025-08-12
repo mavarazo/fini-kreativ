@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<section class="contact__section">
+  <article class="contact__page">
+    <div class="contact__content">
+      {{ .Content }}
+    </div>
+
+    <form action="https://formsubmit.co/marco.niederberger+fini@gmail.com" method="POST" class="contact__form">
+      <!-- SPAM-Schutz -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="{{ site.BaseURL }}contact-submitted/">
+      <input type="text" name="_honey" style="display:none">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" placeholder="dein@email.ch" required>
+
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+
+      <button type="submit">Senden</button>
+
+      <p>
+        Mit dem Absenden akzeptierst du die <a href="/privacy/" target="_blank">Datenschutzerklärung</a>.
+      </p>
+    </form>
+  </article>
+</section>
+{{ end }}

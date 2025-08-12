@@ -1,0 +1,93 @@
+{{ define "main" }}
+
+{{ $categories := slice }}
+{{ range .Site.RegularPages }}
+  {{ with .Params.categories }}
+    {{ range . }}
+      {{ $categories = $categories | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $categories = $categories | uniq | sort }}
+
+<section class="products__section">
+  <div class="categories">
+    <button class="category__button active" data-filter="all">{{ i18n "all" }}</button>
+    {{ range $categories }}
+      <button class="category__button" data-filter="{{ . | urlize }}">{{ i18n . }}</button>
+    {{ end }}
+  </div>
+
+  <div class="products">
+    {{ $products := where .Site.RegularPages "Section" "products" }}
+    {{ $sorted := sort $products "Title" "asc" }}
+    {{ range $sorted }}
+      <a href="{{ .RelPermalink }}" class="product__card" data-categories="{{ delimit .Params.categories ',' }}">
+        {{ with .Resources.GetMatch .Params.image }}
+          {{ $thumb := .Fit "450x450" }}
+          <img class="product__image" src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}">
+        {{ end }}
+        <div class="product__overlay">
+          <h2 class="product__name">{{ .Title }}</h2>
+          <p class="product__description">{{ .Params.summary }}</p>
+          {{ if not .Params.sold }}  
+          <div class="product__price">{{ printf "%.2f" .Params.price }} CHF</div>
+          {{ end }}
+        </div>
+
+        {{ if .Params.sold }}
+        <div class="product__badge">{{ i18n "sold" }}</div>
+        {{ end }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".category__button");
+  const cards = document.querySelectorAll(".product__card");
+
+  // Funktion zum Filtern
+  function applyFilter(filter) {
+    buttons.forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === filter || (filter === "all" && b.dataset.filter === "all"));
+    });
+
+    cards.forEach(card => {
+      const cats = card.dataset.categories.split(",");
+      if (filter === "all" || cats.includes(filter)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // URL-Parameter lesen
+  const params = new URLSearchParams(window.location.search);
+  const currentFilter = params.get("category") || "all";
+
+  applyFilter(currentFilter);
+
+  // Button-Klicks
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.filter;
+
+      // URL-Parameter aktualisieren, ohne Seite neu zu laden
+      const newUrl = new URL(window.location.href);
+      if (selected === "all") {
+        newUrl.searchParams.delete("category");
+      } else {
+        newUrl.searchParams.set("category", selected);
+      }
+      history.replaceState(null, "", newUrl);
+
+      applyFilter(selected);
+    });
+  });
+});
+</script>
+
+{{ end }}

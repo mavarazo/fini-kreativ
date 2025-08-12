@@ -1,0 +1,9 @@
+:root {
+  --main-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --main-width: 960px;
+  }
+}

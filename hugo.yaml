@@ -1,5 +1,5 @@
 baseURL: https://fini-kreativ.ch
-languageCode: de-ch
+defaultContentLanguage: de
 title: fini-kreativ
 
 theme: PaperMod
@@ -20,6 +20,12 @@ caches:
 
 favicon: favicon.ico
 
+languages:
+  de:
+    languageName: Deutsch
+    contentDir: content
+    weight: 1
+
 minify:
   disableXML: true
   minifyOutput: true
@@ -28,18 +34,49 @@ services:
   googleAnalytics:
     id: G-4LLDP71Q6S
 
+markup:
+  css:
+    disableInline: false
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: products
+      name: Produkte
+      url: /products/
+      weight: 20
+    - identifier: contact
+      name: Kontakt
+      url: /contact
+      weight: 90
+    - identifier: about
+      name: Über mich
+      url: /about
+      weight: 90
+
 params:
   env: production
   title: fini-kreativ
   description: Aus Stoffen von gestern – Taschen für morgen. ❤️
   keywords: [Blog, Upcycling, Recycling, Handmade, Clutch, Bag]
 
-  profileMode:
-    enabled: true
+  homeInfoParams:
     title: fini-kreativ
+    content: Aus Stoffen von gestern – Taschen für morgen.
+
+
+  # profileMode:
+  #   enabled: true
+  #   title: fini-kreativ
     # subtitle: |
     #   "Aus Stoffen von gestern – Taschen für morgen."
     # imageUrl: /assets/2025-05-21.jpeg
     # imageWidth: 512
     # imageHeight: 512
     # imageTitle: 3 bags
+
+taxonomies:
+  category: categories
