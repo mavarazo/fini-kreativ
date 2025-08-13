@@ -1,4 +1,5 @@
 ---
+type: "product"
 title: "Clutch 1"
 categories: ["clutches"]
 

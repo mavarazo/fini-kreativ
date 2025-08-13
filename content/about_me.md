@@ -18,7 +18,7 @@ Die Stoffe kaufe ich bei regionalen Stoff- und Mercerie-Läden ein.
 
 Wann immer ich Zeit habe, versuche ich wieder etwas Cooles zu nähen, und wenn dir meine Sachen gefallen, freue ich mich umso mehr darüber 🎉.
 
-Wenn du ein Geschenk suchst oder dir mit einem meiner Produkte auch selbst eine Freude machen möchtest, kannst du mir eine Nachricht über das [Kontaktformular]({{< ref "/contact" >}}) auf der Homepage schreiben.  
+Wenn du ein Geschenk suchst oder dir mit einem meiner Produkte auch selbst eine Freude machen möchtest, kannst du mir eine Nachricht über das [Kontaktformular]({{< ref "" >}}) auf der Homepage schreiben.  
 
 Meine Artikel können auch bei mir persönlich angeschaut werden. Gerne versende ich den von dir gekauften Artikel mit der Post. Den Versand müsstest du allerdings selbst übernehmen.
 Der Kaufbetrag kann über Twint oder Bar erfolgen.

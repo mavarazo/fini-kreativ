@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+{{.Content}}
+
+<section class="space-y-10 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {{ $section := .Section }}
+    {{ range where site.RegularPages "Section" $section }}
+
+    <article>
+      <a href="{{ .RelPermalink }}" class="block relative overflow-hidden">
+        {{ with .Resources.GetMatch .Params.image }}
+          {{ $thumb := .Fit "450x450" }}
+          <img
+            src="{{ $thumb.RelPermalink }}"
+            alt="{{ .Title }}"
+            class="w-full h-auto object-cover rounded-lg"
+            loading="lazy"
+          >
+        {{ end }}
+
+        {{ if .Params.sold }}
+          <span class="absolut top-0 right-0 rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">Verkauft</span>
+        {{ end }}
+      </a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}
