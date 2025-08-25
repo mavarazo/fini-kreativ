@@ -1,0 +1,17 @@
+{{ if .Site.Params.googleAnalytics }}
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ .Site.Params.googleAnalytics }}', {
+      'anonymize_ip': true,
+      'allow_ad_personalization_signals': false,
+      'cookie_flags': 'SameSite=None;Secure',
+    });
+  </script>
+{{ end }}

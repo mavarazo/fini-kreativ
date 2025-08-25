@@ -1,0 +1,110 @@
+{{ define "main" }}
+  <!-- Landingpage Hero Section -->
+
+  <section class="flex flex-col items-center justify-center">
+    <!-- Hero Text -->
+    <h1 class="mb-6 text-center text-5xl font-bold md:text-6xl">
+      {{ .Title }}
+    </h1>
+    <p class="mb-8 max-w-xl text-center text-lg md:text-xl">
+      {{ .Description }}
+    </p>
+
+    <div class="relative">
+      <!-- Slide-Bilder -->
+      {{ $images := .Params.gallery }}
+      {{ range $index, $img := $images }}
+        <div
+          class="slide {{ if eq $index 0 }}
+            block
+          {{ else }}
+            hidden
+          {{ end }} transition-transform duration-700 ease-in-out">
+          <img
+            src="{{ $img.img }}"
+            alt="{{ $img.alt }}"
+            class="h-96 w-full rounded-lg object-cover shadow-lg md:h-[600px] lg:h-[700px]" />
+        </div>
+      {{ end }}
+
+
+      <!-- Dots -->
+      <div class="mt-4 flex justify-center space-x-2">
+        {{ range $index, $img := $images }}
+          <button
+            class="dot h-3 w-3 cursor-pointer rounded-full bg-gray-600"
+            data-index="{{ $index }}"></button>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      let current = 0;
+      const total = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle("hidden", i !== index));
+        dots.forEach((d, i) => d.classList.toggle("bg-cyan-600", i === index));
+        dots.forEach((d, i) => d.classList.toggle("bg-gray-600", i !== index));
+        current = index;
+        resetTimer();
+      }
+
+      // Auto-Slide Funktion
+      function nextSlide() {
+        showSlide((current + 1) % total);
+      }
+
+      let interval = setInterval(nextSlide, 5000);
+
+      function resetTimer() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 5000);
+      }
+
+      // Klick auf Dot
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const index = parseInt(dot.getAttribute("data-index"));
+          showSlide(index);
+        });
+      });
+
+      // Swipe-Unterstützung
+      let startX = 0;
+      let endX = 0;
+      const threshold = 50; // minimale Swipe-Distanz in px
+      const slider = document.querySelector(".relative");
+
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX;
+      });
+
+      slider.addEventListener("touchend", () => {
+        const diffX = endX - startX;
+        if (Math.abs(diffX) > threshold) {
+          if (diffX < 0) {
+            // Swipe nach links → nächstes Bild
+            showSlide((current + 1) % total);
+          } else {
+            // Swipe nach rechts → vorheriges Bild
+            showSlide((current - 1 + total) % total);
+          }
+        }
+        startX = 0;
+        endX = 0;
+      });
+
+      // Initial anzeigen
+      showSlide(0);
+    });
+  </script>
+{{ end }}

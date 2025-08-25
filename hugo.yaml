@@ -1,0 +1,50 @@
+baseURL: https://www.fini-kreativ.ch/
+title: fini-kreativ.ch
+
+languageCode: de-ch
+defaultContentLanguage: de
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: assets/notwatching/hugo_stats\.json
+      target: css
+    - source: (postcss|tailwind)\.config\.js
+      target: css
+
+menu:
+  main:
+    - name: fini Clutch
+      url: /clutches/
+      weight: 10
+    - name: fini Necessaire
+      url: /necessaires/
+      weight: 20
+    - name: fini Sac
+      url: /sacs/
+      weight: 30
+    - name: Über mich
+      url: /about_me
+      weight: 90
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.148.0"
+  mounts:
+    - source: assets
+      target: assets
+    - disableWatch: true
+      source: hugo_stats.json
+      target: assets/notwatching/hugo_stats.json
+
+params:
+  contact:
+    name: Fiorella Niederberger
+    location: Rothenburg, Schweiz
+    email: info[at]fini-kreativ.ch
+
+  googleAnalytics: G-4LLDP71Q6S
+
+  logo: "images/logo-black.png"

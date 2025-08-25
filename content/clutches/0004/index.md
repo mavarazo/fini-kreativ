@@ -1,6 +1,8 @@
 ---
 title: "Clutch 4"
-categories: ["clutches"]
+type: "products"
+weight: 4
+draft: true
 
 image: "1.jpeg"
 summary: "Awesome!"

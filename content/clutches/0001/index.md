@@ -1,9 +1,9 @@
 ---
-type: "product"
 title: "Clutch 1"
-categories: ["clutches"]
+type: "products"
+weight: 1
+draft: true
 
-image: "1.jpeg"
 summary: "Bingo!"
 price: 123.50
 sold: true
