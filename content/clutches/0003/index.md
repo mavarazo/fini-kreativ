@@ -6,7 +6,7 @@ draft: true
 
 image: "1.jpeg"
 summary: "Awesome!"
-price: 123.50
+price: 92 CHF
 ---
 
 Lorem Ipsum

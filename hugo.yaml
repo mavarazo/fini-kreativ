@@ -15,13 +15,13 @@ build:
 
 menu:
   main:
-    - name: fini Clutch
+    - name: Clutches
       url: /clutches/
       weight: 10
-    - name: fini Necessaire
+    - name: Necessaires
       url: /necessaires/
       weight: 20
-    - name: fini Sac
+    - name: Wäschesäcke
       url: /sacs/
       weight: 30
     - name: Über mich

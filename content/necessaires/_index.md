@@ -1,4 +1,4 @@
 ---
-title: "fini Necessaire"
+title: "Necessaires"
 type: "products"
 ---

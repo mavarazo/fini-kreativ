@@ -7,7 +7,8 @@
       </h1>
     </header>
 
-    {{- if not .Pages }}
+    {{- $availableProducts := where .Pages "Params.sold" "!=" true }}
+    {{- if not $availableProducts }}
       <section class="flex h-64 items-center justify-center">
         <p class="text-center text-xl text-gray-500">
           Hier sind leider noch keine Produkte vorhanden. Bitte schau bald
@@ -17,7 +18,7 @@
     {{ else }}
       <section
         class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {{- range .Pages.ByWeight }}
+        {{- range $availableProducts.ByWeight }}
           <a
             href="{{ .Permalink }}"
             class="group relative block transform overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">

@@ -10,7 +10,7 @@ Hallo und herzlich willkommen auf meiner Seite für selbstgenähte Unikate
 Ich bin Mutter von zwei wundervollen Töchtern und glücklich verheiratet.
 Vor einiger Zeit habe ich die Liebe zum Nähen entdeckt – eine Leidenschaft, die aus einer persönlichen Krise heraus entstanden ist. Seitdem nähe ich hobbymässig mit viel Hingabe und Freude, aktuell vor allem Necessaires, Clutches und Wäschesäcke unter dem Namen fini.
 
-Wann immer möglich, versuche ich Reste von Materialien wiederzuverwenden, um so dem Upcycling-Gedanken zu folgen. So kann es sein, dass z. B das Innenfutter meiner Clutches aus nicht mehr benötigten Kissenbezügen besteht, während der Außenstoff aus Lederresten oder anderen recycelten Materialien gefertigt wird. 
+Wann immer möglich, versuche ich Reste von Materialien wiederzuverwenden, um so dem Upcycling-Gedanken zu folgen. So kann es sein, dass z. B das Innenfutter meiner Clutches aus nicht mehr benötigten Kissenbezügen besteht, während der Aussenstoff aus Lederresten oder anderen recycelten Materialien gefertigt wird. 
 Manchmal entstehen Kombinationen aber auch, weil die Stoffe mir zusammen gut gefallen ☺️
 
 Meine Unikate sind alle von Hand genäht, nicht jede Naht ist perfekt, jedes Stück ist jedoch einzigartig und mit viel Liebe zum Detail hergestellt. 

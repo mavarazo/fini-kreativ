@@ -1,4 +1,4 @@
 ---
-title: "fini Sac"
+title: "Wäschesäcke"
 type: "products"
 ---

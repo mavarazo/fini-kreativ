@@ -1,4 +1,4 @@
 ---
-title: "fini Clutch"
+title: "Clutches"
 type: "products"
 ---
