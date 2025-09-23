@@ -31,7 +31,7 @@ services:
 params:
   env: production
   title: fini-kreativ
-  description: Aus Stoffen von gestern – Taschen für morgen.
+  description: Aus Stoffen von gestern – Taschen für morgen. ❤️
   keywords: [Blog, Upcycling, Recycling, Handmade, Clutch, Bag]
 
   profileMode:
