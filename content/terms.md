@@ -63,7 +63,7 @@ Die gelieferten Artikel bleiben bis zur vollständigen Bezahlung Eigentum des Ve
 
 ## 6. Produktmerkmale und Gewährleistung
 
-Die Artikel werden in sorgfältiger Handarbeit gefertigt. Daher können Grösse,Form und Ausführung geringfügig variieren.
+Die Artikel werden in sorgfältiger Handarbeit gefertigt. Daher können Grösse, Form und Ausführung geringfügig variieren.
 Die auf der Webseite dargestellten Bilder dienen ausschliesslich der Veranschaulichung von Farben,
 Formen und Mustern. Leichte Abweichungen sind unvermeidbar und begründen keinen Anspruch auf Umtausch oder Rückgabe.
 

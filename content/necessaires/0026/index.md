@@ -1,7 +1,7 @@
 ---
 title: "Glanz & Charme"
 type: "products"
-weight: 6
+weight: 26
 draft: true
 
 image: "1.jpeg"
