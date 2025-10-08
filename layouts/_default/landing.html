@@ -10,29 +10,31 @@
       {{ .Description }}
     </p>
 
-    <div class="relative">
-      <!-- Slide-Bilder -->
+    <div class="relative h-96 w-full max-w-4xl md:h-[600px] lg:h-[700px]">
       {{ $images := .Params.gallery }}
       {{ range $index, $img := $images }}
         <div
           class="slide {{ if eq $index 0 }}
-            block
+            opacity-100
           {{ else }}
-            hidden
-          {{ end }} transition-transform duration-700 ease-in-out">
+            opacity-0 pointer-events-none
+          {{ end }} absolute inset-0 transition-opacity duration-700 ease-in-out">
           <img
             src="{{ $img.img }}"
             alt="{{ $img.alt }}"
-            class="h-96 w-full rounded-lg object-cover shadow-lg md:h-[600px] lg:h-[700px]" />
+            class="h-full w-full rounded-lg object-cover shadow-2xl" />
         </div>
       {{ end }}
 
 
       <!-- Dots -->
-      <div class="mt-4 flex justify-center space-x-2">
+      <div
+        class="absolute right-0 bottom-4 left-0 flex justify-center space-x-2">
         {{ range $index, $img := $images }}
           <button
-            class="dot h-3 w-3 cursor-pointer rounded-full bg-gray-600"
+            class="dot {{ if eq $index 0 }}
+              bg-cyan-600
+            {{ end }} h-3 w-3 cursor-pointer rounded-full bg-gray-600 transition-colors duration-300"
             data-index="{{ $index }}"></button>
         {{ end }}
       </div>
@@ -47,7 +49,16 @@
       const total = slides.length;
 
       function showSlide(index) {
-        slides.forEach((s, i) => s.classList.toggle("hidden", i !== index));
+        slides.forEach((s, i) => {
+          if (i === index) {
+            s.classList.remove("opacity-0", "pointer-events-none");
+            s.classList.add("opacity-100");
+          } else {
+            s.classList.remove("opacity-100");
+            s.classList.add("opacity-0", "pointer-events-none");
+          }
+        });
+
         dots.forEach((d, i) => d.classList.toggle("bg-cyan-600", i === index));
         dots.forEach((d, i) => d.classList.toggle("bg-gray-600", i !== index));
         current = index;
