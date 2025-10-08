@@ -2,12 +2,26 @@
   <div class="bg-white/20 py-5 backdrop-blur-sm">
     <div
       class="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-x-12 gap-y-8 px-6 sm:grid-cols-3">
-      <div class="flex flex-col items-center sm:items-start">
+      <div class="relative flex justify-center sm:justify-start">
         {{ if .Site.Params.logo }}
           <img
             src="{{ .Site.Params.logo | absURL }}"
             class="max-h-[10rem] max-w-[10rem] object-scale-down object-center sm:object-left"
             alt="{{ .Site.Title }}" />
+
+          <span
+            class="absolute text-sm font-semibold text-gray-700"
+            style="
+              top: 0;
+              left: 10rem; 
+              transform: translateX(-50%); 
+              @media (min-width: 640px) { /* sm: */
+                  left: 10rem; /* Positioniert es rechts vom Logo */
+                  transform: translateX(0) translateY(10%); /* Nur leicht hochgestellt, keine horizontale Verschiebung */
+              }
+            ">
+            ®
+          </span>
         {{ end }}
       </div>
       <div class="text-center sm:text-left">

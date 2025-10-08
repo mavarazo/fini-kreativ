@@ -38,6 +38,14 @@ Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung auss
 
 ---
 
+## Markenrecht
+
+Die auf dieser Webseite verwendeten Logos, Markennamen und Produktbezeichnungen sind, soweit nicht anders gekennzeichnet, eingetragene oder geschützte Marken der Fiorella Niederberger / fini.
+
+Die Verwendung dieser Marken, einschliesslich des Logos, in jeglicher Form ist Dritten ohne vorherige schriftliche Genehmigung der Inhaberin untersagt. Die Verwendung des ®-Symbols dient als Hinweis auf die Markenregistrierung.  
+
+---
+
 ## Datenschutz
 
 Weitere Informationen zum Datenschutz finden Sie in unserer [Datenschutzerklärung](/datenschutz/).

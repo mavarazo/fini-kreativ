@@ -6,7 +6,7 @@
     <div
       class="rounded-4xl border border-white/90 bg-white/35 px-4 py-5 shadow-lg backdrop-blur-sm sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
-        <div class="flex-shrink-0">
+        <div class="relative flex-shrink-0">
           <a href="{{ "" | relLangURL }}" class="flex">
             <span class="sr-only">{{ .Site.Title | markdownify }}</span>
             {{- if .Site.Params.logo -}}
@@ -16,6 +16,18 @@
                 alt="{{ .Site.Title }}" />
             {{- end -}}
           </a>
+
+          {{- if .Site.Params.logo -}}
+            <span
+              class="absolute text-sm font-semibold text-gray-700"
+              style="
+                top: 0;
+                left: 5rem;
+                transform: translateY(15%);
+              ">
+              ®
+            </span>
+          {{- end -}}
         </div>
 
         <nav class="hidden space-x-8 md:flex">
