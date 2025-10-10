@@ -14,7 +14,7 @@
 .prose h1,
 .prose h2,
 .prose h3 {
-  @apply [word-break:break-word] [hyphens:auto];
+  @apply [hyphens:auto];
 }
 
 .prose h1 {
