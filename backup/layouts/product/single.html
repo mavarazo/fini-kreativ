@@ -1,0 +1,84 @@
+{{ define "main" }}
+  <article class="product__detail">
+    <h1>{{ .Title }}</h1>
+
+    <div class="slider" data-slider>
+      <div class="slides" data-slides>
+        {{ range $index, $img := .Resources.ByType "image" }}
+          {{ $small := $img.Resize "400x" }}
+          {{ $large := $img.Resize "800x" }}
+
+
+          <div class="slide">
+            <img
+              class="product__image"
+              src="{{ $small.RelPermalink }}"
+              srcset="
+                {{ $small.RelPermalink }} 1x,
+                {{ $large.RelPermalink }} 2x
+              "
+              alt="{{ $.Title }}" />
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="dots" data-dots>
+        {{ range $index, $img := .Resources.ByType "image" }}
+          <button
+            data-dot="{{ $index }}"
+            aria-label="{{ add $index 1 }}"></button>
+        {{ end }}
+      </div>
+    </div>
+
+    <p>{{ .Content }}</p>
+    <br />
+    {{ if not .Params.sold }}
+      <p>
+        <strong>{{ i18n "price" }}:</strong> {{ printf "%.2f" .Params.price }}
+        CHF
+      </p>
+    {{ end }}
+    {{ if .Params.sold }}
+      <p><strong>{{ i18n "status" }}</strong>: {{ i18n "sold" }}</p>
+    {{ end }}
+  </article>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector("[data-slider]");
+      if (!slider) return;
+
+      const slides = slider.querySelector("[data-slides]");
+      const dots = slider.querySelectorAll("[data-dots] button");
+      const total = dots.length;
+      let index = 0;
+      let startX = 0;
+
+      function goToSlide(i) {
+        index = (i + total) % total;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, idx) =>
+          dot.classList.toggle("active", idx === index),
+        );
+      }
+
+      dots.forEach((dot, i) =>
+        dot.addEventListener("click", () => goToSlide(i)),
+      );
+
+      slides.addEventListener(
+        "touchstart",
+        (e) => (startX = e.touches[0].clientX),
+      );
+      slides.addEventListener("touchend", (e) => {
+        const diff = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diff) > 50) {
+          goToSlide(index + (diff < 0 ? 1 : -1));
+        }
+      });
+
+      goToSlide(0);
+    });
+  </script>
+{{ end }}

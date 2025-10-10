@@ -1,0 +1,7 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Zentriert die Karten */
+  padding: 2rem 0;
+}

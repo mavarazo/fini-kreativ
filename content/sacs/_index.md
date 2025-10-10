@@ -1,0 +1,4 @@
+---
+title: "Wäschesäcke"
+type: "products"
+---

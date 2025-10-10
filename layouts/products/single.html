@@ -1,0 +1,52 @@
+{{- define "main" }}
+  <div class="mx-auto max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    <article class="py-12 md:py-20 lg:py-24">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <!-- Bildgalerie -->
+        <div class="space-y-6">
+          {{- with .Resources.ByType "image" }}
+            {{- range . }}
+              <div class="overflow-hidden rounded-xl shadow-xl">
+                <img
+                  src="{{ .RelPermalink }}"
+                  alt="{{ $.Title }}"
+                  class="w-full object-cover" />
+              </div>
+            {{- end }}
+          {{- end }}
+        </div>
+
+        <!-- Produktinformationen -->
+        <div class="flex flex-col justify-start">
+          <header class="mb-6">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              {{ .Title }}
+            </h1>
+            <p class="mt-2 text-2xl text-gray-600">{{ .Params.price }}</p>
+          </header>
+
+          <section class="prose prose-lg">
+            {{- .Content }}
+          </section>
+
+          <!-- Weitere Details (optional) -->
+          <div class="mt-8 space-y-4">
+            {{- if .Params.material }}
+              <div class="flex items-center">
+                <span class="font-semibold text-gray-800">Material:</span>
+                <span class="ml-2 text-gray-600">{{ .Params.material }}</span>
+              </div>
+            {{- end }}
+            {{- if .Params.dimensions }}
+              <div class="flex items-center">
+                <span class="font-semibold text-gray-800">Masse:</span>
+                <span class="ml-2 text-gray-600">{{ .Params.dimensions }}</span>
+              </div>
+            {{- end }}
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+{{- end }}

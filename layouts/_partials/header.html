@@ -1,0 +1,140 @@
+{{- $currentURL := .RelPermalink -}}
+
+
+<header class="mt-4 mb-8 w-full">
+  <div class="mx-auto max-w-7xl">
+    <div
+      class="rounded-4xl border border-white/90 bg-white/35 px-4 py-5 shadow-lg backdrop-blur-sm sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="relative flex-shrink-0">
+          <a href="{{ "" | relLangURL }}" class="flex">
+            <span class="sr-only">{{ .Site.Title | markdownify }}</span>
+            {{- if .Site.Params.logo -}}
+              <img
+                src="{{ .Site.Params.logo | absURL }}"
+                class="max-h-[5rem] max-w-[5rem] object-scale-down object-left"
+                alt="{{ .Site.Title }}" />
+            {{- end -}}
+          </a>
+
+          {{- if .Site.Params.logo -}}
+            <span
+              class="absolute text-sm font-semibold text-gray-700"
+              style="
+                top: 0;
+                left: 5rem;
+                transform: translateY(15%);
+              ">
+              ®
+            </span>
+          {{- end -}}
+        </div>
+
+        <nav class="hidden space-x-8 md:flex">
+          {{- range .Site.Menus.main -}}
+            {{- $isActive := or (eq .URL $currentURL) (hasPrefix $currentURL .URL) -}}
+            <a
+              href="{{ .URL }}"
+              class="{{ if $isActive }}
+                text-cyan-600
+              {{ else }}
+                text-gray-600
+              {{ end }} font-medium transition-colors duration-150 hover:text-cyan-600">
+              {{ .Name | markdownify }}
+            </a>
+          {{- end -}}
+        </nav>
+
+        <div class="flex md:hidden">
+          <button
+            id="mobile-menu-toggle"
+            class="text-gray-600 focus:outline-none">
+            <svg
+              id="hamburger-icon"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg
+              id="close-icon"
+              class="hidden h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-50 hidden bg-gradient-to-br from-pink-200 to-cyan-200 md:hidden">
+  <div class="flex h-full w-full flex-col items-center justify-center">
+    <button
+      id="close-menu"
+      class="absolute top-8 right-8 text-gray-600 focus:outline-none">
+      <svg
+        class="h-8 w-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <nav class="flex flex-col items-center space-y-8 text-3xl font-bold">
+      {{- range .Site.Menus.main -}}
+        {{- $isActive := or (eq .URL $currentURL) (hasPrefix $currentURL .URL) -}}
+        <a
+          href="{{ .URL }}"
+          class="{{ if $isActive }}
+            text-cyan-600
+          {{ else }}
+            text-gray-600
+          {{ end }} transition-colors duration-150 hover:text-cyan-600">
+          {{ .Name | markdownify }}
+        </a>
+      {{- end -}}
+    </nav>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenuButton = document.getElementById("close-menu");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden"); // Verhindert das Scrollen im Hintergrund
+      hamburgerIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    }
+
+    mobileMenuToggle.addEventListener("click", toggleMenu);
+    closeMenuButton.addEventListener("click", toggleMenu);
+  });
+</script>

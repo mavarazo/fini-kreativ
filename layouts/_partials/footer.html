@@ -1,0 +1,84 @@
+<footer class="w-full pt-10 print:hidden">
+  <div class="bg-white/20 py-5 backdrop-blur-sm">
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-x-12 gap-y-8 px-6 sm:grid-cols-3">
+      <div class="relative flex justify-center sm:justify-start">
+        {{ if .Site.Params.logo }}
+          <img
+            src="{{ .Site.Params.logo | absURL }}"
+            class="max-h-[10rem] max-w-[10rem] object-scale-down object-center sm:object-left"
+            alt="{{ .Site.Title }}" />
+
+          <span
+            class="absolute text-sm font-semibold text-gray-700"
+            style="
+              top: 0;
+              left: 10rem; 
+              transform: translateX(-50%); 
+              @media (min-width: 640px) { /* sm: */
+                  left: 10rem; /* Positioniert es rechts vom Logo */
+                  transform: translateX(0) translateY(10%); /* Nur leicht hochgestellt, keine horizontale Verschiebung */
+              }
+            ">
+            ®
+          </span>
+        {{ end }}
+      </div>
+      <div class="text-center sm:text-left">
+        <strong>{{ .Site.Title }}</strong>
+        <br />
+        {{ .Site.Params.contact.name }}
+        <br />
+        {{ .Site.Params.contact.location }}
+        <br />
+        Kontakt:
+        {{ .Site.Params.contact.email }}
+      </div>
+      <div class="text-center sm:text-left">
+        <a href="/datenschutz">Datenschutz</a>
+        <br />
+        <a href="/impressum">Impressum</a>
+        <br />
+        <a href="/agb">AGB</a>
+        <br />
+
+        <div class="flex gap-2">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-facebook-icon lucide-facebook">
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-instagram-icon lucide-instagram">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

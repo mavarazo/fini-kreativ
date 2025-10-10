@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@source "hugo_stats.json";
+
+@layer base {
+  a {
+    @apply font-medium text-gray-600 transition-colors duration-150 hover:text-cyan-600 hover:underline hover:drop-shadow-sm focus:text-cyan-600 focus:drop-shadow-sm;
+  }
+}
+
+.prose a {
+  @apply font-medium text-gray-600 no-underline transition-colors duration-150 hover:text-cyan-600 hover:underline hover:drop-shadow-sm focus:text-cyan-600 focus:drop-shadow-sm;
+}
+
+.prose figure {
+  @apply mx-auto mb-4 w-fit max-w-sm rounded-2xl shadow-lg sm:mb-4 sm:ml-8;
+}
+
+.prose figure img {
+  @apply rounded-2xl;
+}
+
+.prose ol > li::marker {
+  @apply text-cyan-600;
+}
+
+.prose ul > li::marker {
+  @apply text-cyan-600;
+}

@@ -1,45 +1,50 @@
-baseURL: https://fini-kreativ.ch
+baseURL: https://www.fini-kreativ.ch/
+title: fini-kreativ.ch
+
 languageCode: de-ch
-title: fini-kreativ
+defaultContentLanguage: de
 
-theme: PaperMod
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: assets/notwatching/hugo_stats\.json
+      target: css
+    - source: (postcss|tailwind)\.config\.js
+      target: css
 
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
+menu:
+  main:
+    - name: Clutches
+      url: /clutches/
+      weight: 10
+    - name: Necessaires
+      url: /necessaires/
+      weight: 20
+    - name: Wäschesäcke
+      url: /sacs/
+      weight: 30
+    - name: Über mich
+      url: /about_me
+      weight: 90
 
-assets:
-  favicon16x16: /assets/favicon-16x16.png
-  favicon32x32: /assets/favicon-32x32.png
-  apple_touch_icon: /assets/apple-touch-icon.png
-
-caches:
-  images:
-    dir: :cacheDir/images
-
-favicon: favicon.ico
-
-minify:
-  disableXML: true
-  minifyOutput: true
-
-services:
-  googleAnalytics:
-    id: G-4LLDP71Q6S
+module:
+  hugoVersion:
+    extended: true
+    min: "0.148.0"
+  mounts:
+    - source: assets
+      target: assets
+    - disableWatch: true
+      source: hugo_stats.json
+      target: assets/notwatching/hugo_stats.json
 
 params:
-  env: production
-  title: fini-kreativ
-  description: Aus Stoffen von gestern – Taschen für morgen. ❤️
-  keywords: [Blog, Upcycling, Recycling, Handmade, Clutch, Bag]
+  contact:
+    name: Fiorella Niederberger
+    location: Rothenburg, Schweiz
+    email: info[at]fini-kreativ.ch
 
-  profileMode:
-    enabled: true
-    title: fini-kreativ
-    # subtitle: |
-    #   "Aus Stoffen von gestern – Taschen für morgen."
-    # imageUrl: /assets/2025-05-21.jpeg
-    # imageWidth: 512
-    # imageHeight: 512
-    # imageTitle: 3 bags
+  googleAnalytics: G-4LLDP71Q6S
+
+  logo: "images/logo-black.png"
