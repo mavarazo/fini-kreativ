@@ -4,7 +4,7 @@ title: "AGB"
 url: "/agb"
 ---
 
-# Allgemeine Geschäftsbedingungen (AGB) für den Verkauf von Handmade-Artikeln
+# Allgemeine Geschäftsbedingungen (AGB) für den Verkauf von Handmade&#8209;Artikeln
 
 ## 1. Geltungsbereich
 

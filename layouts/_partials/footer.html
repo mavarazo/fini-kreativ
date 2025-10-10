@@ -2,6 +2,7 @@
   <div class="bg-white/20 py-5 backdrop-blur-sm">
     <div
       class="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-x-12 gap-y-8 px-6 sm:grid-cols-3">
+      <!-- Erste Spalte: Logo -->
       <div class="relative flex justify-center sm:justify-start">
         {{ if .Site.Params.logo }}
           <img
@@ -15,8 +16,9 @@
               top: 0;
               left: 10rem; 
               transform: translateX(-50%); 
-              @media (min-width: 640px) { /* sm: */
-                  left: 10rem; /* Positioniert es rechts vom Logo */
+              /* Responsives Styling für Desktop/Tablet (sm breakpoint) */
+              @media (min-width: 640px) {
+                  left: 10rem; /* Positioniert es rechts vom Logo (10rem Breite) */
                   transform: translateX(0) translateY(10%); /* Nur leicht hochgestellt, keine horizontale Verschiebung */
               }
             ">
@@ -24,6 +26,8 @@
           </span>
         {{ end }}
       </div>
+
+      <!-- Zweite Spalte: Kontaktinformationen -->
       <div class="text-center sm:text-left">
         <strong>{{ .Site.Title }}</strong>
         <br />
@@ -34,17 +38,23 @@
         Kontakt:
         {{ .Site.Params.contact.email }}
       </div>
+
+      <!-- Dritte Spalte: Links und Social Media Icons -->
       <div class="text-center sm:text-left">
+        <!-- Links -->
         <a href="/datenschutz">Datenschutz</a>
         <br />
         <a href="/impressum">Impressum</a>
         <br />
         <a href="/agb">AGB</a>
-        <br />
 
-        <div class="flex gap-2">
+        <!-- Social Media Icons -->
+        <div
+          class="mt-4 flex items-center justify-center gap-2 sm:justify-start">
           {{- if .Site.Params.social.facebook }}
+            <!-- Facebook Icon -->
             <a
+              class="text-xl text-gray-600 transition-colors duration-150 hover:text-cyan-600 sm:text-2xl"
               href="https://www.facebook.com/{{ .Site.Params.social.facebook }}"
               target="_blank">
               <svg
@@ -65,7 +75,9 @@
           {{- end }}
 
           {{- if .Site.Params.social.instagram }}
+            <!-- Instagram Icon -->
             <a
+              class="text-xl text-gray-600 transition-colors duration-150 hover:text-cyan-600 sm:text-2xl"
               href="https://www.instagram.com/{{ .Site.Params.social.instagram }}/"
               target="_blank">
               <svg

@@ -1,5 +1,5 @@
 ---
-title: "Willkommen bei fini-kreativ"
+title: "Willkommen bei fini&#8209;kreativ"
 layout: "landing"
 description: "Nähen, weil es Spass macht"
 gallery:

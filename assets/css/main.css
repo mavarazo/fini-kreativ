@@ -11,6 +11,16 @@
   }
 }
 
+.prose h1,
+.prose h2,
+.prose h3 {
+  @apply [word-break:break-word] [hyphens:auto];
+}
+
+.prose h1 {
+  @apply text-center text-3xl font-bold tracking-tight sm:text-5xl;
+}
+
 .prose a {
   @apply font-medium text-gray-600 no-underline transition-colors duration-150 hover:text-cyan-600 hover:underline hover:drop-shadow-sm focus:text-cyan-600 focus:drop-shadow-sm;
 }
