@@ -10,7 +10,8 @@
       {{ .Description }}
     </p>
 
-    <div class="relative h-96 w-full max-w-4xl md:h-[600px] lg:h-[700px]">
+    <div
+      class="slider relative h-96 w-full max-w-4xl md:h-[600px] lg:h-[700px]">
       {{ $images := .Params.gallery }}
       {{ range $index, $img := $images }}
         <div
@@ -87,20 +88,25 @@
 
       // Swipe-Unterstützung
       let startX = 0;
-      let endX = 0;
-      const threshold = 50; // minimale Swipe-Distanz in px
-      const slider = document.querySelector(".relative");
+      const threshold = 50;
+      const slider = document.querySelector(".slider");
 
       slider.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
       });
 
-      slider.addEventListener("touchmove", (e) => {
-        endX = e.touches[0].clientX;
-      });
+      slider.addEventListener(
+        "touchmove",
+        (e) => {
+          e.preventDefault();
+        },
+        { passive: false },
+      );
 
-      slider.addEventListener("touchend", () => {
+      slider.addEventListener("touchend", (e) => {
+        const endX = e.changedTouches[0].clientX;
         const diffX = endX - startX;
+
         if (Math.abs(diffX) > threshold) {
           if (diffX < 0) {
             // Swipe nach links → nächstes Bild
@@ -110,11 +116,8 @@
             showSlide((current - 1 + total) % total);
           }
         }
-        startX = 0;
-        endX = 0;
       });
 
-      // Initial anzeigen
       showSlide(0);
     });
   </script>
