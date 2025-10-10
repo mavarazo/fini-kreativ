@@ -1,7 +1,7 @@
 ---
-title: "Willkommen bei fini"
+title: "Willkommen bei fini-kreativ"
 layout: "landing"
-description: "Aus Stoffen von gestern – Kreatives für morgen"
+description: "Nähen, weil es Spass macht"
 gallery:
   - img: "/images/gallery/01.jpg"
     alt: "Necessaires"

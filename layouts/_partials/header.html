@@ -9,15 +9,15 @@
         <div class="relative flex-shrink-0">
           <a href="{{ "" | relLangURL }}" class="flex">
             <span class="sr-only">{{ .Site.Title | markdownify }}</span>
-            {{- if .Site.Params.logo -}}
+            {{- if .Site.Params.logo }}
               <img
                 src="{{ .Site.Params.logo | absURL }}"
                 class="max-h-[5rem] max-w-[5rem] object-scale-down object-left"
                 alt="{{ .Site.Title }}" />
-            {{- end -}}
+            {{- end }}
           </a>
 
-          {{- if .Site.Params.logo -}}
+          {{- if .Site.Params.logo }}
             <span
               class="absolute text-sm font-semibold text-gray-700"
               style="
@@ -31,7 +31,7 @@
         </div>
 
         <nav class="hidden space-x-8 md:flex">
-          {{- range .Site.Menus.main -}}
+          {{- range .Site.Menus.main }}
             {{- $isActive := or (eq .URL $currentURL) (hasPrefix $currentURL .URL) -}}
             <a
               href="{{ .URL }}"
@@ -42,7 +42,7 @@
               {{ end }} font-medium transition-colors duration-150 hover:text-cyan-600">
               {{ .Name | markdownify }}
             </a>
-          {{- end -}}
+          {{- end }}
         </nav>
 
         <div class="flex md:hidden">

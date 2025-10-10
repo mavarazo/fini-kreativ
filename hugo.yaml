@@ -17,10 +17,10 @@ menu:
   main:
     - name: Clutches
       url: /clutches/
-      weight: 10
+      weight: 20
     - name: Necessaires
       url: /necessaires/
-      weight: 20
+      weight: 10
     - name: Wäschesäcke
       url: /sacs/
       weight: 30
@@ -48,3 +48,6 @@ params:
   googleAnalytics: G-4LLDP71Q6S
 
   logo: "images/logo-black.png"
+
+  social:
+    instagram: fini_kreativ
