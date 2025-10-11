@@ -18,7 +18,7 @@ Die Stoffe für meine Projekte kaufe ich bevorzugt in regionalen Stoff- und Merc
 Wann immer ich Zeit habe, versuche ich wieder etwas Schönes zu nähen. Manchmal bin ich mutig und wage mich auch an neue Herausforderungen.
 Wenn dir meine Artikel gefallen, freue ich mich umso mehr darüber 🎉.
 
-Falls du ein Geschenk suchst oder dir mit eines meiner Produkte auch selbst eine Freude machen möchtest, kannst du mir eine E-Mail schreiben.
+Falls du ein Geschenk suchst oder dir mit einem meiner Produkte auch selbst eine Freude machen möchtest, kannst du mir eine E-Mail schreiben.
 Meine Artikel können gerne bei mir persönlich angeschaut werden. Auf Wunsch versende ich den von dir gekauften Artikel auch mit der Post.  
 Die Kosten für die Verpackung und den Versand müsstest du allerdings selbst übernehmen. Sie können je nach Grösse des Artikels unterschiedlich ausfallen. 
 Die Zahlung kann bar, mit Twint oder per Banküberweisung erfolgen.
