@@ -2,10 +2,9 @@
 title: "Kirschrot & Stil"
 type: "products"
 weight: 6
-draft: true
 
 image: "1.jpeg"
-price: 86 CHF
+price: 85 CHF
 ---
 
 🌸 Handgemacht mit Liebe 🌸
@@ -14,5 +13,5 @@ Diese Clutch (ca. 21,5 x 15 cm) besticht durch ihr elegantes Design und ihre sor
 
 Der Innenstoff aus feinem Baumwollstoff im zarten Kirschblüten-Muster bringt eine verspielte Note und sorgt zugleich für Stabilität. Der rot-goldene Reissverschluss harmoniert wunderschön mit dem frischen Farbton der Clutch und verleiht ihr einen edlen Glanz. Außen rundet ein Logo aus Kunstleder das Design ab, während innen ein dezentes Baumwoll-Logo für den letzten liebevollen Schliff sorgt.
 
-Ob für den Abend, Wochenendausflüge oder den Alltag –  
+Ob für den Abend oder den Alltag –  
 diese Clutch ist ein stilvoller Begleiter, der Frische und Eleganz vereint. ✨

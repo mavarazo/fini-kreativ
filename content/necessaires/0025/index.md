@@ -2,7 +2,7 @@
 title: "Beere & Glanz"
 type: "products"
 weight: 25
-draft: true
+
 
 image: "1.jpeg"
 price: 86 CHF

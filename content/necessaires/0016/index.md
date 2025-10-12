@@ -2,7 +2,7 @@
 title: "Kompakt & charmant"
 type: "products"
 weight: 16
-draft: true
+
 
 image: "1.jpeg"
 price: 69 CHF

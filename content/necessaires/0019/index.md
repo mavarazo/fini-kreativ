@@ -2,7 +2,7 @@
 title: "Elegant & einzigartig"
 type: "products"
 weight: 19
-draft: true
+
 
 image: "1.jpeg"
 price: 82 CHF
@@ -10,7 +10,7 @@ price: 82 CHF
 
 💫 Von Hand mit Sorgfalt gefertigt 💫
 
-Dieses Necessaire (ca 27 x 17 cm) überzeugt durch sein edles Äusseres und sein nachhaltiges Herz. Aussen gefertigt aus hochwertigem Lederimitat aus recyceltem Leder in tiefem Blau, bringt es Stil und Umweltbewusstsein harmonisch zusammen.
+Dieses Necessaire (ca 27 x 17 cm) überzeugt durch sein edles Äusseres und sein wunderschön gestaltetes Inneres. Aussen gefertigt aus hochwertigem Lederimitat aus recyceltem Leder in tiefem Blau, bringt es Stil und Umweltbewusstsein harmonisch zusammen.
 
 Im Inneren wartet ein beschichteter Baumwollstoff, der mit zwei grossen, von Hand gemalten Mustern verziert ist – kunstvoll, individuell und einfach einzigartig. Der Reissverschluss in Dunkelblau und Grau fügt sich dezent und zugleich edel ins Design ein.
 

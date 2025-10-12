@@ -2,7 +2,6 @@
 title: "Schlicht & elegant"
 type: "products"
 weight: 23
-draft: true
 
 image: "1.jpeg"
 price: 69 CHF
