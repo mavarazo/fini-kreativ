@@ -24,6 +24,9 @@ menu:
     - name: Wäschesäcke
       url: /sacs/
       weight: 30
+    - name: Kontakt
+      url: /kontakt
+      weight: 80
     - name: Über mich
       url: /about_me
       weight: 90
