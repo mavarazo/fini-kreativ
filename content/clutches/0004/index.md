@@ -2,10 +2,10 @@
 title: "Sonnig & elegant"
 type: "products"
 weight: 4
-draft: true
+
 
 image: "1.jpeg"
-price: 92 CHF
+price: 89 CHF
 ---
 
 🌸 Handgemacht mit Herz 🌸
