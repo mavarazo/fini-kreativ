@@ -3,7 +3,6 @@ title: "Sanft & edel"
 type: "products"
 weight: 5
 
-image: "1.jpeg"
 price: 89 CHF
 ---
 

@@ -3,7 +3,6 @@ title: "Modern & stilvoll"
 type: "products"
 weight: 24
 
-image: "1.jpeg"
 price: 69 CHF
 ---
 

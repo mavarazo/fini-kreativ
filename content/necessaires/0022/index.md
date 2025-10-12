@@ -2,9 +2,7 @@
 title: "Warm & stilvoll"
 type: "products"
 weight: 22
-draft: true
 
-image: "1.jpeg"
 price: 69 CHF
 ---
 

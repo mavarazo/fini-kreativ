@@ -3,7 +3,6 @@ title: "Jade & Charakter"
 type: "products"
 weight: 29
 
-image: "1.jpg"
 price: 65 CHF
 ---
 

@@ -3,8 +3,6 @@ title: "Sonnig & elegant"
 type: "products"
 weight: 4
 
-
-image: "1.jpeg"
 price: 89 CHF
 ---
 

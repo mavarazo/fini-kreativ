@@ -3,8 +3,6 @@ title: "Glanz & Charme"
 type: "products"
 weight: 26
 
-
-image: "1.jpeg"
 price: 106 CHF
 ---
 

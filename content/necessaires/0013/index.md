@@ -2,9 +2,7 @@
 title: "Stilvoll & einzigartig"
 type: "products"
 weight: 13
-draft: true
 
-image: "1.jpeg"
 price: 69 CHF
 ---
 

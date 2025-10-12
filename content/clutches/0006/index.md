@@ -3,7 +3,6 @@ title: "Kirschrot & Stil"
 type: "products"
 weight: 6
 
-image: "1.jpeg"
 price: 85 CHF
 ---
 

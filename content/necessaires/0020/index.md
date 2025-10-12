@@ -3,8 +3,6 @@ title: "Zeitlos & edel"
 type: "products"
 weight: 20
 
-
-image: "1.jpeg"
 price: 88 CHF
 ---
 

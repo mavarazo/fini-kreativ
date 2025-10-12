@@ -3,8 +3,6 @@ title: "Elegant & einzigartig"
 type: "products"
 weight: 19
 
-
-image: "1.jpeg"
 price: 82 CHF
 ---
 

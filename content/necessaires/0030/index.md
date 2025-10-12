@@ -3,7 +3,6 @@ title: "Jade & Charme"
 type: "products"
 weight: 30
 
-image: "1.jpg"
 price: 45 CHF
 ---
 
