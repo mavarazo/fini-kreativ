@@ -2,7 +2,6 @@
 title: "Elegant & fröhlich"
 type: "products"
 weight: 14
-draft: true
 
 image: "1.jpeg"
 price: 60 CHF

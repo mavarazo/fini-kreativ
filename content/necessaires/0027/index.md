@@ -2,7 +2,6 @@
 title: "Beere & Besonders"
 type: "products"
 weight: 27
-draft: true
 
 image: "1.jpeg"
 price: 86 CHF

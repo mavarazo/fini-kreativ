@@ -2,7 +2,6 @@
 title: "Elegant & grosszügig"
 type: "products"
 weight: 21
-draft: true
 
 image: "1.jpg"
 price: 88 CHF

@@ -2,7 +2,6 @@
 title: "Fröhlich & praktisch"
 type: "products"
 weight: 2
-draft: true
 
 image: "1.jpeg"
 price: 50 CHF
