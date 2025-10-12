@@ -2,7 +2,7 @@
 title: "Sonnig & stilvoll"
 type: "products"
 weight: 28
-draft: true
+
 
 image: "1.jpeg"
 price: 69 CHF

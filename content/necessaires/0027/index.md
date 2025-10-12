@@ -5,7 +5,7 @@ weight: 27
 draft: true
 
 image: "1.jpeg"
-price: 106 CHF
+price: 86 CHF
 ---
 
 ✨ Handgemacht mit Herz ✨
