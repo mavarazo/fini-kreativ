@@ -3,7 +3,6 @@ title: "Elegant & verspielt "
 type: "products"
 weight: 2
 
-image: "1.jpeg"
 price: 89 CHF
 ---
 

@@ -3,8 +3,6 @@ title: "Strahlend & schön"
 type: "products"
 weight: 15
 
-
-image: "1.jpeg"
 price: 88 CHF
 ---
 

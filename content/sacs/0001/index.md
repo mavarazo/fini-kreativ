@@ -3,7 +3,6 @@ title: "Praktisch & leicht"
 type: "products"
 weight: 1
 
-image: "1.jpeg"
 price: 40 CHF
 ---
 

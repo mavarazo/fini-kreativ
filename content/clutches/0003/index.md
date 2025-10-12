@@ -3,7 +3,6 @@ title: "Frisch & einzigartig"
 type: "products"
 weight: 3
 
-image: "1.jpeg"
 price: 89 CHF
 ---
 

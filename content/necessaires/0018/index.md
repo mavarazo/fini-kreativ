@@ -3,8 +3,6 @@ title: "Nachhaltig & besonders"
 type: "products"
 weight: 18
 
-
-image: "1.jpeg"
 price: 82 CHF
 ---
 

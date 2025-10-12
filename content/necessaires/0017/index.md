@@ -3,8 +3,6 @@ title: "Fröhlich & strahlend"
 type: "products"
 weight: 17
 
-
-image: "1.jpeg"
 price: 88 CHF
 ---
 
