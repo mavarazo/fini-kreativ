@@ -15,4 +15,4 @@ Ein weisser Reissverschluss mit kupferfarbenen Zähnen und Zipper rundet das Des
 💚 Besonderheit:
 Wie sein grosses XL-Pendant gehört auch dieses Necessaire zu meinen allerersten gefertigten Stücken. In dieser Phase probierte ich verschiedene Wege aus, mein Logo auf glattem Kunstleder anzubringen. Leider zeigte sich später, dass das aufgeplottete Logo nicht dauerhaft hält. Daher biete ich dieses Stück zu einem günstigeren Preis an – es ist aber dennoch wunderschön verarbeitet, robust und funktional.
 
-Wenn dich dieser kleine Makel nicht stört und du Freude an einem handgefertigten Einzelstück mit Geschichte hast, dann ist dieses Necessaire genau das Richtige für dich. ✨
+Wenn dich dies nicht stört und du Freude an einem handgefertigten Einzelstück mit Geschichte hast, dann ist dieses Necessaire genau das Richtige für dich. ✨

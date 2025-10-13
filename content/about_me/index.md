@@ -8,7 +8,7 @@ title: "Über mich"
 Hallo und herzlich willkommen auf meiner Seite für selbstgenähte Unikate.
 
 Ich heisse Fiorella Niederberger, bin in den Vierzigern, Mutter von zwei wundervollen Töchtern und verheiratet mit dem Ersteller dieser wunderbaren Webseite.
-Vor einiger Zeit habe ich die Liebe zum Nähen entdeckt – eine Leidenschaft, die aus einer persönlichen Krise heraus entstanden ist. Damals habe ich angefangen mit dem Nähen von Wäschesäcken für die Familie. Ein Hobby, das ich fortan intensiviert habe und seitdem nähe ich mit viel Hingabe und Freude. Besonders viel Freude bereitet mir das Kreieren von Necessaires, aber auch Clutches und Wäschesäcke gibt es bei mir zu entdecken.
+Vor einiger Zeit habe ich die Liebe zum Nähen entdeckt – eine Leidenschaft, die in einer Zeit persönlicher Veränderung entstanden ist. Damals habe ich angefangen mit dem Nähen von Wäschesäcken für die Familie. Ein Hobby, das ich fortan intensiviert habe und seitdem nähe ich mit viel Hingabe und Freude. Besonders viel Freude bereitet mir das Kreieren von Necessaires, aber auch Clutches und Wäschesäcke gibt es bei mir zu entdecken.
 
 Nach Möglichkeit versuche ich Reste von Materialien wiederzuverwenden oder Stoffen ein zweites Leben zu geben. Manchmal entstehen Kombinationen aber auch, weil die Stoffe zusammen gut harmonieren ☺️
 
