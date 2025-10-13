@@ -3,7 +3,7 @@ title: "Elegant & fröhlich"
 type: "products"
 weight: 14
 
-price: 60 CHF
+price: 60 CHF - reserviert
 ---
 
 ✨ Mit viel Liebe von Hand gefertigt ✨

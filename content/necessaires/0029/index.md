@@ -15,4 +15,4 @@ Der Innenstoff besteht aus beschichtetem Baumwollstoff mit einem feinen grünen 
 💚 Besonderheit:
 Dieses Necessaire gehört zu meinen allerersten gefertigten Stücken. Damals war ich noch auf der Suche nach der besten Methode, mein Logo auf glattem Kunstleder anzubringen. Leider hat sich später gezeigt, dass das aufgeplottete Logo nicht dauerhaft hält. Daher biete ich dieses Stück zu einem günstigeren Preis an – in der Qualität des Materials und der Verarbeitung steht es den anderen jedoch in nichts nach.
 
-Wenn dich dieser kleine Schönheitsfehler nicht stört und du Freude an einem liebevoll gefertigten, robusten Einzelstück hast, dann ist dieses Necessaire genau das Richtige für dich. ✨
+Wenn dich dies nicht stört und du Freude an einem liebevoll gefertigten, robusten Einzelstück hast, dann ist dieses Necessaire genau das Richtige für dich. ✨
