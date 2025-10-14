@@ -4,7 +4,7 @@ title: "Kontakt"
 url: "/kontakt"
 ---
 
-Meine Kontaktmöglichkeit befinden sich derzeit noch im Aufbau.  
+Meine Kontaktmöglichkeit befindet sich derzeit noch im Aufbau.  
 Für Fragen zu meinen Produkten kannst du mich gerne per E-Mail erreichen:
 
 📧 E-Mail: info[at]fini-kreativ.ch
