@@ -3,7 +3,7 @@ title: "Sonnig & elegant"
 type: "products"
 weight: 4
 
-price: 89 CHF - reserviert
+price: 89 CHF
 ---
 
 🌸 Handgemacht mit Herz 🌸
