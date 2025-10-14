@@ -3,7 +3,7 @@ title: "Glanz & Charme"
 type: "products"
 weight: 26
 
-price: 106 CHF
+price: 102 CHF
 ---
 
 ✨ Handgemacht mit Herz ✨
