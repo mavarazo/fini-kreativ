@@ -3,7 +3,7 @@ title: "Strahlend & schön"
 type: "products"
 weight: 15
 
-price: 88 CHF
+price: 81 CHF
 ---
 
 ❤️ Handgemacht mit Liebe zum Detail ❤️

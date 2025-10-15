@@ -3,7 +3,7 @@ title: "Elegant & verspielt"
 type: "products"
 weight: 2
 
-price: 89 CHF
+price: 83 CHF
 ---
 
 ✨ Mit Liebe handgemacht ✨

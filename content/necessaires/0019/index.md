@@ -3,7 +3,7 @@ title: "Elegant & einzigartig"
 type: "products"
 weight: 19
 
-price: 82 CHF
+price: 76 CHF
 ---
 
 💫 Von Hand mit Sorgfalt gefertigt 💫

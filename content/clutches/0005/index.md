@@ -3,7 +3,7 @@ title: "Sanft & edel"
 type: "products"
 weight: 5
 
-price: 89 CHF
+price: 83 CHF
 ---
 
 🌿 Handgemacht mit Liebe zum Detail 🌿

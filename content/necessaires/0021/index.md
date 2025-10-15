@@ -3,7 +3,7 @@ title: "Elegant & grosszügig"
 type: "products"
 weight: 21
 
-price: 88 CHF
+price: 81 CHF
 ---
 
 🌊 Handgemacht mit Charakter 🌊

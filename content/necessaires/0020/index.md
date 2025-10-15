@@ -3,7 +3,7 @@ title: "Zeitlos & edel"
 type: "products"
 weight: 20
 
-price: 88 CHF
+price: 81 CHF
 ---
 
 🤎 Handgemacht mit Stil 🤎
