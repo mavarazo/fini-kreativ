@@ -3,7 +3,7 @@ title: "Modern & stilvoll"
 type: "products"
 weight: 24
 
-price: 69 CHF
+price: 65 CHF
 ---
 
 💙 Mit Leidenschaft gefertigt 💙

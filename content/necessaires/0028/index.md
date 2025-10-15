@@ -3,7 +3,7 @@ title: "Sonnig & stilvoll"
 type: "products"
 weight: 28
 
-price: 69 CHF
+price: 65 CHF
 ---
 
 ✨ Handgemacht mit Herz ✨

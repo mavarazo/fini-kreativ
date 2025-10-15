@@ -3,7 +3,7 @@ title: "Warm & stilvoll"
 type: "products"
 weight: 22
 
-price: 69 CHF
+price: 65 CHF
 ---
 
 🌸 Mit Liebe handgefertigt 🌸

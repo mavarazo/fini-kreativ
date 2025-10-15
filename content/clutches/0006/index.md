@@ -3,7 +3,7 @@ title: "Kirschrot & Stil"
 type: "products"
 weight: 6
 
-price: 80 CHF
+price: 77 CHF
 ---
 
 🌸 Handgemacht mit Liebe 🌸

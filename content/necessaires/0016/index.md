@@ -3,7 +3,7 @@ title: "Kompakt & charmant"
 type: "products"
 weight: 16
 
-price: 69 CHF
+price: 65 CHF
 ---
 
 🌸 Handgemacht mit Herz 🌸

@@ -3,7 +3,7 @@ title: "Frisch & einzigartig"
 type: "products"
 weight: 3
 
-price: 89 CHF
+price: 83 CHF
 ---
 
 🌸 Handgemacht mit Herz 🌸

@@ -3,7 +3,7 @@ title: "Beere & Besonders"
 type: "products"
 weight: 27
 
-price: 86 CHF
+price: 79 CHF
 ---
 
 ✨ Handgemacht mit Herz ✨

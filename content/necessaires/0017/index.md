@@ -3,7 +3,7 @@ title: "Fröhlich & strahlend"
 type: "products"
 weight: 17
 
-price: 88 CHF
+price: 81 CHF
 ---
 
 🌸 Handgemacht mit Herz 🌸
