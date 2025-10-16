@@ -3,7 +3,7 @@ title: "Nachhaltig & besonders"
 type: "products"
 weight: 18
 
-price: 76 CHF
+price: 76 CHF - reserviert
 ---
 
 🌿 Handgemacht & nachhaltig 🌿
