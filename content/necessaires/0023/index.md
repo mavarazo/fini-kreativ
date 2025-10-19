@@ -3,7 +3,8 @@ title: "Schlicht & elegant"
 type: "products"
 weight: 23
 
-price: 65 CHF - reserviert
+price: 65 CHF - verkauft
+sold: true
 ---
 
 ✨ Mit Sorgfalt handgefertigt ✨
