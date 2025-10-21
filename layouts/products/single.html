@@ -44,6 +44,10 @@
             </div>
           {{- end }}
         </div>
+
+        <div class="mt-8 space-y-4">
+          {{ partial "contact_form" (dict "context" . "isProduct" true "productName" .Title "productURL" .Permalink) }}
+        </div>
       </div>
     </div>
   </article>
