@@ -3,7 +3,7 @@
   <form
     id="contactForm"
     method="POST"
-    action="http://submission.surtur.ch/api/submission"
+    action="https://submission.surtur.ch/api/submission"
     class="space-y-4">
     <input type="hidden" name="token" id="securityToken" value="" />
 
@@ -115,7 +115,7 @@
 </div>
 
 <script>
-  const BACKEND_URL = "http://submission.surtur.ch";
+  const BACKEND_URL = "https://submission.surtur.ch";
 
   const securityTokenInput = document.getElementById("securityToken");
   async function fetchSecurityToken() {
