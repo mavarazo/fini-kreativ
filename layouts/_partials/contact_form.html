@@ -1,0 +1,209 @@
+<div
+  class="back mx-auto max-w-xl rounded-xl border border-white/90 bg-white/35 p-6 shadow-xl backdrop-blur-sm">
+  <form
+    id="contactForm"
+    method="POST"
+    action="http://submission.surtur.ch/api/submission"
+    class="space-y-4">
+    <input type="hidden" name="token" id="securityToken" value="" />
+
+    <div style="display:none;" aria-hidden="true">
+      <label for="website">Website (Bitte leer lassen)</label>
+      <input
+        type="text"
+        name="website"
+        id="website"
+        tabindex="-1"
+        autocomplete="off" />
+    </div>
+
+    {{ $isProduct := false }}
+    {{ with .isProduct }}{{ $isProduct = . }}{{ end }}
+
+    {{ if $isProduct }}
+      <h2 class="mb-4 text-xl font-semibold text-gray-800">
+        Anfrage zu Produkt:
+        {{ .productName | default "Unbekanntes Produkt" }}
+      </h2>
+
+      <input
+        type="hidden"
+        name="product_name"
+        value="{{ .productName | default "N/A" }}" />
+      <input
+        type="hidden"
+        name="product_url"
+        value="{{ .productURL | default "N/A" }}" />
+    {{ else }}
+      <h2 class="mb-4 text-xl font-semibold text-gray-800">
+        Allgemeine Kontaktanfrage
+      </h2>
+    {{ end }}
+
+
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700"
+        >Name</label
+      >
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required
+        class="mt-1 block w-full rounded-md border border-white/90 px-4 py-2 shadow-sm focus:border-cyan-600 focus:ring-cyan-600" />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700"
+        >E-Mail</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        class="mt-1 block w-full rounded-md border border-white/90 px-4 py-2 shadow-sm focus:border-cyan-600 focus:ring-cyan-600" />
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700"
+        >Nachricht</label
+      >
+      <textarea
+        name="message"
+        id="message"
+        rows="4"
+        required
+        class="mt-1 block w-full rounded-md border border-white/90 px-4 py-2 shadow-sm focus:border-cyan-600 focus:ring-cyan-600"></textarea>
+    </div>
+
+    {{ if $isProduct }}
+      <div class="flex items-start">
+        <div class="flex h-5 items-center">
+          <input
+            id="agb_accepted"
+            name="agb_accepted"
+            type="checkbox"
+            required
+            class="h-4 w-4 rounded border-white/90 text-gray-600 focus:ring-cyan-600" />
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="agb_accepted" class="font-medium text-gray-600">
+            Ich habe die
+            <a
+              href="/agb"
+              target="_blank"
+              class="text-gray-600 underline hover:text-cyan-600"
+              >AGB gelesen und akzeptiere sie</a
+            >.
+          </label>
+        </div>
+      </div>
+    {{ end }}
+
+
+    <button
+      type="submit"
+      class="flex w-full justify-center rounded-md border border-transparent bg-gray-600 px-4 py-3 text-lg font-medium text-white shadow-sm transition duration-150 ease-in-out hover:bg-cyan-600 focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2 focus:outline-none">
+      Nachricht senden
+    </button>
+  </form>
+
+  <div
+    id="formMessage"
+    class="mt-4 hidden rounded-md p-3 text-center text-sm"></div>
+</div>
+
+<script>
+  const BACKEND_URL = "http://submission.surtur.ch";
+
+  const securityTokenInput = document.getElementById("securityToken");
+  async function fetchSecurityToken() {
+    try {
+      const tokenResponse = await fetch(`${BACKEND_URL}/api/token`, {
+        method: "GET",
+      });
+
+      if (tokenResponse.ok) {
+        const tokenData = await tokenResponse.json();
+        if (securityTokenInput && tokenData.token) {
+          securityTokenInput.value = tokenData.token;
+          console.log(
+            `✅ Sicherheitstoken beim Laden gesetzt: ${tokenData.token.substring(0, 10)}...`,
+          );
+        }
+      } else {
+        console.error("Fehler beim Abrufen des Sicherheitstokens vom Backend.");
+      }
+    } catch (error) {
+      console.error(
+        "Netzwerkfehler beim Abrufen des Sicherheitstokens:",
+        error,
+      );
+    }
+  }
+
+  fetchSecurityToken();
+
+  const form = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.textContent = "Wird gesendet...";
+    submitButton.disabled = true;
+
+    formMessage.classList.add("hidden");
+
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      if (!data.token) {
+        throw new Error(
+          "Sicherheitstoken fehlt (Konnte beim Laden nicht abgerufen werden).",
+        );
+      }
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      console.log(
+        `response: ${JSON.stringify(response)}, result: ${JSON.stringify(result)}`,
+      );
+
+      if (response.ok && result.success) {
+        formMessage.textContent =
+          "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
+        formMessage.className =
+          "mt-4 p-3 rounded-md text-sm text-center bg-green-100 text-green-700";
+        form.reset();
+      } else {
+        formMessage.textContent =
+          result.message ||
+          "Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.";
+        formMessage.className =
+          "mt-4 p-3 rounded-md text-sm text-center bg-red-100 text-red-700";
+      }
+    } catch (error) {
+      formMessage.textContent =
+        "Netzwerkfehler: Die Verbindung zum Server konnte nicht hergestellt werden.";
+      formMessage.className =
+        "mt-4 p-3 rounded-md text-sm text-center bg-red-100 text-red-700";
+      console.error("Sende-Fehler:", error);
+    } finally {
+      formMessage.classList.remove("hidden");
+      submitButton.textContent = "Nachricht senden";
+      submitButton.disabled = false;
+    }
+  });
+</script>
