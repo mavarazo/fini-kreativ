@@ -4,6 +4,7 @@ type: "products"
 weight: 18
 
 price: 76 CHF - reserviert
+sold: true
 ---
 
 🌿 Handgemacht & nachhaltig 🌿
