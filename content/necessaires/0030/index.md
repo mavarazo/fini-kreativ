@@ -4,6 +4,7 @@ type: "products"
 weight: 30
 
 price: 45 CHF
+sold: true
 ---
 
 🌿 Handgemacht mit Liebe und Geschichte 🌿
