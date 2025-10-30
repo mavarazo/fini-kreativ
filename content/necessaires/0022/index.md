@@ -4,6 +4,7 @@ type: "products"
 weight: 22
 
 price: 65 CHF
+reserved: true
 ---
 
 🌸 Mit Liebe handgefertigt 🌸
