@@ -5,6 +5,7 @@ weight: 22
 
 price: 65 CHF
 reserved: true
+sold: true
 ---
 
 🌸 Mit Liebe handgefertigt 🌸
