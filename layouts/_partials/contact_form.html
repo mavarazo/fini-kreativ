@@ -34,10 +34,6 @@
         type="hidden"
         name="product_url"
         value="{{ .productURL | default "N/A" }}" />
-    {{ else }}
-      <h2 class="mb-4 text-xl font-semibold text-gray-800">
-        Allgemeine Kontaktanfrage
-      </h2>
     {{ end }}
 
 
@@ -72,7 +68,11 @@
       <textarea
         name="message"
         id="message"
-        rows="4"
+        {{ if $isProduct }}
+          rows="4"
+        {{ else }}
+          rows="6"
+        {{ end }}
         required
         class="mt-1 block w-full rounded-md border border-white/90 px-4 py-2 shadow-sm focus:border-cyan-600 focus:ring-cyan-600"></textarea>
     </div>
