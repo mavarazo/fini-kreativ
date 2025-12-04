@@ -5,7 +5,7 @@ weight: 20
 
 price: 81 CHF
 reserved: true
-sold: false
+sold: true
 ---
 
 🤎 Handgemacht mit Stil 🤎
