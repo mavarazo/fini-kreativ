@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <header class="mb-10 text-center">
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+      {{ .Title | markdownify }}
+    </h1>
+  </header>
+
+  {{ $availableProducts := where .Pages "Params.sold" "!=" true }}
+  {{ if not $availableProducts }}
+    <section class="flex h-64 items-center justify-center">
+      <p class="text-center text-xl text-gray-500">
+        Hier sind leider noch keine Produkte vorhanden. Bitte schau bald wieder
+        vorbei!
+      </p>
+    </section>
+  {{ else }}
+    <section
+      class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {{ range $availableProducts }}
+        <a
+          href="{{ .Permalink }}"
+          class="group relative block transform overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
+          <figure class="aspect-w-4 aspect-h-5 w-full">
+            <img
+              src="{{ .Params.cover }}"
+              alt="{{ .Title }}"
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </figure>
+
+          <div
+            class="text-opacity-100 absolute inset-0 flex items-end justify-start bg-gradient-to-t from-gray-900 via-transparent p-6 text-white transition-opacity duration-300 group-hover:opacity-100 sm:opacity-0">
+            <h2 class="text-lg font-semibold">{{ .Title | markdownify }}</h2>
+          </div>
+        </a>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}

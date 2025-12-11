@@ -1,4 +1,0 @@
----
-title: "Clutches"
-type: "products"
----
