@@ -4,6 +4,7 @@ type: "products"
 weight: 33
 
 price: 65 CHF
+sold: true
 ---
 
 💙 Handgemacht, stilvoll und voller Charme 💙
