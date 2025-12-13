@@ -4,6 +4,7 @@ type: "products"
 weight: 19
 
 price: 76 CHF
+sold: true
 ---
 
 💫 Von Hand mit Sorgfalt gefertigt 💫
