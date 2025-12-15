@@ -1,15 +1,16 @@
 services:
   strapi:
     container_name: fini-kreativ-strapi
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
     image: fini-kreativ-strapi:latest
     env_file: .env
     depends_on:
       - database
-    ports:
-      - "1337:1337"
     networks:
-      - strapi
+      - strapi_internal
+      - traefik_proxy
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: database
@@ -20,15 +21,17 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
+      NODE_ENV: production
     volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
+      - "${DATA}/uploads:/opt/app/public/uploads"
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.strapi.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.strapi.entrypoints=websecure"
+      - "traefik.http.routers.strapi.tls=true"
+      - "traefik.http.routers.strapi.tls.certresolver=letsencrypt"
+      - "traefik.http.services.strapi.loadbalancer.server.port=1337"
 
   database:
     container_name: fini-kreativ-database
@@ -39,18 +42,14 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     networks:
-      - strapi
-    ports:
-      - "5432:5432"
+      - strapi_internal
     volumes:
-      - strapi-data:/var/lib/postgresql/data/ #using a volume
-      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+      - "${DATA}/database:/var/lib/postgresql/data"
     restart: unless-stopped
 
-volumes:
-  strapi-data:
-
 networks:
-  strapi:
-    name: strapi
+  strapi_internal:
     driver: bridge
+  traefik_proxy:
+    name: traefik_proxy
+    external: true

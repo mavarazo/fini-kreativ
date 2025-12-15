@@ -6,9 +6,7 @@
     <meta author="Marco Niederberger" />
 
     <title>{{ .Site.Title }}</title>
-    {{- with (templates.Defer (dict "key" "global")) -}}
-      {{- partial "css.html" . -}}
-    {{- end -}}
+    {{ partial "css.html" . }}
 
     {{ partial "analytics.html" . }}
   </head>

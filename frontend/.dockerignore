@@ -1,0 +1,14 @@
+node_modules
+public
+.hugo_build.lock
+
+# Ignore generated content
+content/*
+!content/contact.md
+
+# Ignore fetchted data files
+data/*
+
+# Ignore downloaded images
+static/images/*
+!static/images/logo-black.png

@@ -2,11 +2,10 @@
   "name": "fini-kreativ",
   "version": "0.0.1",
   "scripts": {
-    "develop": "hugo server --buildDrafts --cleanDestinationDir --disableFastRender --ignoreCache",
+    "develop": "npm run sync && hugo server --buildDrafts --cleanDestinationDir --disableFastRender --ignoreCache",
     "format": "prettier -w .",
-    "hugo": "hugo",
-    "hugo:build": "hugo --minify",
-    "sync-content": "node sync-content.js",
+    "build": "npm run sync && hugo --minify",
+    "sync": "node sync.js",
     "tailwindcss:build": "npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output.css --watch"
   },
   "repository": {
@@ -16,14 +15,10 @@
   "keywords": [],
   "author": "Marco Niederberger",
   "license": "ISC",
-  "hugo-bin": {
-    "buildTags": "extended"
-  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.19",
-    "hugo-bin": "^0.145.2",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {

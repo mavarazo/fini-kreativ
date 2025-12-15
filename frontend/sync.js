@@ -9,8 +9,7 @@ const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 let STRAPI_URL;
 
 if (NODE_ENV === "production") {
-  STRAPI_URL =
-    process.env.STRAPI_PRODUCTION_URL || "https://ihre-strapi-domain.com";
+  STRAPI_URL = process.env.STRAPI_URL;
 } else {
   STRAPI_URL = "http://localhost:1337";
 }
@@ -78,7 +77,15 @@ const COLLECTION_CONTENT_MAP = {
 };
 
 const SINGLE_CONTENT_MAP = {
-  about: { dataUrlPath: `/about?${STRAPI_POPULATE_ALL}` },
+  about: {
+    dataUrlPath: `/about?${STRAPI_POPULATE_ALL}`,
+    additionalContentProperties: [
+      {
+        key: "image",
+        transform: async (image) => downloadImage(image),
+      },
+    ],
+  },
   imprint: { dataUrlPath: `/imprint?${STRAPI_POPULATE_ALL}` },
   landing: {
     dataUrlPath: `/landing?${STRAPI_POPULATE_ALL}`,
