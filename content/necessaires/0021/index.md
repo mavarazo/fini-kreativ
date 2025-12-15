@@ -4,6 +4,7 @@ type: "products"
 weight: 21
 
 price: 81 CHF
+sold: true
 ---
 
 🌊 Handgemacht mit Charakter 🌊

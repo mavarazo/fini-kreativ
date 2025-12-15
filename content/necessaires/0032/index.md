@@ -4,6 +4,7 @@ type: "products"
 weight: 32
 
 price: 65 CHF
+sold: true
 ---
 
 🤎 Handgemacht mit Herz & Charakter 🤎
