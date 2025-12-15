@@ -4,6 +4,7 @@ type: "products"
 weight: 15
 
 price: 81 CHF
+sold: true
 ---
 
 ❤️ Handgemacht mit Liebe zum Detail ❤️
