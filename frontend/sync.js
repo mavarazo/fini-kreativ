@@ -25,6 +25,7 @@ const STRAPI_POPULATE_ALL = "populate=*";
 const COLLECTION_CONTENT_MAP = {
   clutches: {
     dataUrlPath: `/products?filters[type][$eq]=Clutch&${STRAPI_DISABLE_PAGINATION}&${STRAPI_POPULATE_ALL}`,
+    contentTitle: "Clutches",
     contentType: "products",
     additionalContentProperties: [
       { key: "price" },
@@ -42,6 +43,7 @@ const COLLECTION_CONTENT_MAP = {
   },
   necessaires: {
     dataUrlPath: `/products?filters[type][$eq]=Necessaire&${STRAPI_DISABLE_PAGINATION}&${STRAPI_POPULATE_ALL}`,
+    contentTitle: "Necessaires",
     contentType: "products",
     additionalContentProperties: [
       { key: "price" },
@@ -59,6 +61,7 @@ const COLLECTION_CONTENT_MAP = {
   },
   sacs: {
     dataUrlPath: `/products?filters[type][$eq]=Sac&${STRAPI_DISABLE_PAGINATION}&${STRAPI_POPULATE_ALL}`,
+    contentTitle: "Wäschesäcke",
     contentType: "products",
     additionalContentProperties: [
       { key: "price" },
@@ -138,9 +141,9 @@ async function downloadImage(item) {
   }
 }
 
-async function generateFrontmatter(item, contentConfig, title) {
+async function generateFrontmatter(item, contentConfig) {
   let frontMatter = "---\n";
-  frontMatter += `title: "${item.title || title}"\n`;
+  frontMatter += `title: "${item.title || contentConfig.contentTitle}"\n`;
   frontMatter += `date: "${item.publishedAt || new Date().toISOString()}"\n`;
   frontMatter += "draft: false\n";
   if (contentConfig.contentType) {
@@ -179,7 +182,7 @@ async function generateDetailPage(key, targetDir, contentConfig, item) {
   const pageName = `${slug}.md`;
   const pagePath = path.join(targetDir, pageName);
 
-  const frontMatter = await generateFrontmatter(item, contentConfig, slug);
+  const frontMatter = await generateFrontmatter(item, contentConfig);
   const contentBody = item.content || "";
   const fullContent = `${frontMatter}\n\n${contentBody}\n`;
 
@@ -191,11 +194,7 @@ async function generateCollectionPage(key, targetDir, contentConfig, item) {
   const pageName = "_index.md";
   const pagePath = path.join(targetDir, pageName);
 
-  const frontMatter = await generateFrontmatter(
-    item,
-    contentConfig,
-    key.charAt(0).toUpperCase() + key.slice(1),
-  );
+  const frontMatter = await generateFrontmatter(item, contentConfig);
   const fullContent = `${frontMatter}\n`;
 
   fs.writeFileSync(pagePath, fullContent, "utf8");
@@ -241,7 +240,7 @@ async function generateSingleContent(key, contentConfig) {
   const pageName = contentConfig.contentFileName || key + ".md";
   const pagePath = path.join(CONTENT_DIR, pageName);
 
-  const frontMatter = await generateFrontmatter(item, contentConfig, key);
+  const frontMatter = await generateFrontmatter(item, contentConfig);
   const contentBody = data.data.content || "";
   const fullContent = `${frontMatter}\n\n${contentBody}\n`;
 
