@@ -4,14 +4,14 @@ const Readable = require("stream").Readable;
 const writeFile = require("fs").promises.writeFile;
 
 const NODE_ENV = process.env.NODE_ENV || "development";
-const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
+const STRAPI_TOKEN = "f8522fb6970e9bb683f6f603251ec01a584d40a4718d055cab1a3398725db41ac030e4014cd923d74985864ee78e576b064a0540e7b801e1b6aa0d6d4e807c827daabe23a95e8d8fe76a6eee29e48720c348c783d1d090cabbc8816ab9467d524d91cc94f7677d68c17d9410cf42ccad6b5877796f1b062271d27e596c10f99a";
 
 let STRAPI_URL;
 
 if (NODE_ENV === "production") {
   STRAPI_URL = process.env.STRAPI_URL;
 } else {
-  STRAPI_URL = "http://localhost:1337";
+  STRAPI_URL = "https://fini-kreativ-cms.surtur.ch";
 }
 
 const CONTENT_DIR = path.join(__dirname, "content");
@@ -121,7 +121,7 @@ async function downloadImage(item) {
     console.log(`📥 Download image "${imageName}"`);
 
     const response = await fetch(
-      `${STRAPI_URL}${item.formats.large.url || item.url}`,
+      `${STRAPI_URL}${item.formats?.large?.url || item.url}`,
     );
     if (!response.ok) {
       console.log(
@@ -134,7 +134,7 @@ async function downloadImage(item) {
     return `/images/${imageName}`;
   } catch (error) {
     console.error(`❌ ERROR downloading image ${imageName}:`, error.message);
-    return `${STRAPI_URL}${item.formats.large.url || item.url}`;
+    return `${STRAPI_URL}${item.formats?.large?.url || item.url}`;
   }
 }
 
