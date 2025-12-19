@@ -19,7 +19,7 @@ const DATA_DIR = path.join(__dirname, "data");
 const STATIC_DIR = path.join(__dirname, "static");
 const IMAGES_DIR = path.join(STATIC_DIR, "images");
 
-const STRAPI_DISABLE_PAGINATION = "pagination[limit]=-1";
+const STRAPI_DISABLE_PAGINATION = "pagination[limit]=999";
 const STRAPI_POPULATE_ALL = "populate=*";
 
 const COLLECTION_CONTENT_MAP = {
