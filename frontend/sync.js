@@ -121,7 +121,7 @@ async function downloadImage(item) {
     console.log(`📥 Download image "${imageName}"`);
 
     const response = await fetch(
-      `${STRAPI_URL}${item.formats.large.url || item.url}`,
+      `${STRAPI_URL}${item.formats?.large?.url || item.url}`,
     );
     if (!response.ok) {
       console.log(
@@ -134,7 +134,7 @@ async function downloadImage(item) {
     return `/images/${imageName}`;
   } catch (error) {
     console.error(`❌ ERROR downloading image ${imageName}:`, error.message);
-    return `${STRAPI_URL}${item.formats.large.url || item.url}`;
+    return `${STRAPI_URL}${item.formats?.large?.url || item.url}`;
   }
 }
 
