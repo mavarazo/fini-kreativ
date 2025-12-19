@@ -1,0 +1,64 @@
+name: Build & Deploy Hugo (Docker Build Only)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: 🧱 Build & Validate
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      # ---------------- Checkout ----------------
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      # ---------------- Docker Build ----------------
+      - name: 🐳 Docker build (Build-only)
+        run: |
+          docker build \
+            --secret id=strapi_token,env=STRAPI_API_TOKEN \
+            --secret id=strapi_url,env=STRAPI_URL \
+            -t hugo-builder .
+        env:
+          STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
+          STRAPI_URL: ${{ secrets.STRAPI_URL }}
+      # ---------------- Extract /public ----------------
+      - name: 📦 Extract Hugo public folder
+        run: |
+          container_id=$(docker create hugo-builder)
+          docker cp $container_id:/app/public ./public
+          docker rm $container_id
+
+      # ---------------- Upload Pages Artifact ----------------
+      - name: 📤 Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/public
+
+  deploy:
+    name: 🚀 Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: 🚀 Deploy
+        uses: actions/deploy-pages@v4

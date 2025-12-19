@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article class="prose prose-lg max-w-full px-4 py-8 md:px-6">
+    <h1 class="mb-6 text-center text-3xl font-bold sm:text-5xl">
+      {{ .Title| markdownify }}
+    </h1>
+
+    <figure class="sm:float-right sm:ml-6 mb-4 w-64">
+        <img
+          src="{{ .Params.image }}"
+          width="250"
+          alt="Bild von mir">
+        </img>
+      </figure>
+
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

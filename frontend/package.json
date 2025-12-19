@@ -1,0 +1,29 @@
+{
+  "name": "fini-kreativ",
+  "version": "0.0.1",
+  "scripts": {
+    "develop": "npm run sync && hugo server --buildDrafts --cleanDestinationDir --disableFastRender --ignoreCache",
+    "format": "prettier -w .",
+    "build": "npm run sync && hugo --minify",
+    "sync": "node sync.js",
+    "tailwindcss:build": "npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavarazo/fini-kreativ.git"
+  },
+  "keywords": [],
+  "author": "Marco Niederberger",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
+}
