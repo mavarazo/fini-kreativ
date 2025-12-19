@@ -3,10 +3,19 @@
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div class="space-y-6">
         {{ $images := .Params.images }}
-        {{ range $index, $image := $images }}
-          <div class="overflow-hidden rounded-lg shadow-lg">
-            <img src="{{ $image }}" alt="" class="h-auto w-full object-cover" />
-          </div>
+        {{ range $images }}
+          {{ with resources.Get . }}
+            {{ $scaled := .Fill "800x1000 Center" }}
+            <div class="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="{{ $scaled.RelPermalink }}"
+                alt=""
+                loading="lazy"
+                width="{{ $scaled.Width }}"
+                height="{{ $scaled.Height }}"
+                class="h-auto w-full object-cover" />
+            </div>
+          {{- end }}
         {{- end }}
       </div>
 

@@ -22,11 +22,17 @@
           href="{{ .Permalink }}"
           class="group relative block transform overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
           <figure class="aspect-w-4 aspect-h-5 w-full">
-            <img
-              src="{{ .Params.cover }}"
-              alt="{{ .Title }}"
-              loading="lazy"
-              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            {{ $coverPath := .Params.cover }}
+            {{ with resources.Get $coverPath }}
+              {{ $scaled := .Fill "800x1000 Center" }}
+              <img
+                src="{{ $scaled.RelPermalink }}"
+                alt="{{ .Title }}"
+                loading="lazy"
+                width="{{ $scaled.Width }}"
+                height="{{ $scaled.Height }}"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            {{ end }}
           </figure>
 
           <div
