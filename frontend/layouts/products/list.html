@@ -6,7 +6,7 @@
     </h1>
   </header>
 
-  {{ $availableProducts := where .Pages "Params.sold" "!=" true }}
+  {{ $availableProducts := where .Pages "Params.isSold" "!=" true }}
   {{ if not $availableProducts }}
     <section class="flex h-64 items-center justify-center">
       <p class="text-center text-xl text-gray-500">
