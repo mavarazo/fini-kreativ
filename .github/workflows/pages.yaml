@@ -3,6 +3,8 @@ name: Build & Deploy Hugo (Docker Build Only)
 on:
   push:
     branches: ["main"]
+  repository_dispatch:
+    types: [cms_update]
   workflow_dispatch:
 
 permissions:
