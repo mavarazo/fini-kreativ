@@ -93,12 +93,6 @@ const SINGLE_CONTENT_MAP = {
   landing: {
     dataUrlPath: `/landing?${STRAPI_POPULATE_ALL}`,
     contentFileName: "_index.md",
-    additionalContentProperties: [
-      {
-        key: "images",
-        transform: async (images) => downloadImages(images),
-      },
-    ],
   },
   privacy: { dataUrlPath: `/privacy?${STRAPI_POPULATE_ALL}` },
   term_condition: { dataUrlPath: `/term-condition?${STRAPI_POPULATE_ALL}` },
